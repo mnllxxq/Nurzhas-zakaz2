@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mnllxxq</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(дороогоо.jpeg) no-repeat center center fixed;
+            background-size: cover; 
+        }
+        
+        .car {
+            width: 700px;
+            height: 289px;
+            position: absolute;
+            bottom: 10px; 
+            left: calc(100vw + 100px); 
+            animation: moveCar 5s linear infinite; 
+            border-radius: 10px;
+            background-image: url('матиз.png'); 
+            background-size: cover; 
+        }
+        
+        .person {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 10px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('nnnn.png');
+            background-size: cover;
+        }
+        
+        @keyframes moveCar {
+            from {
+                left: calc(100vw + 100px); /* Изменено начальное положение машины на правый край экрана */
+            }
+            to {
+                left: -100px; /* Машина будет двигаться влево до левого края экрана */
+            }
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: linear-gradient(to right, #630092 50%, #ff0062 50%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #ff0000 50%, #008f39 50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="car"></div>
+    <div class="person"></div> 
+
+    <div class="button-container">
+        <button onclick="stopAnimation()">Остановить анимацию</button>
+        <button onclick="resumeAnimation()">Продолжить анимацию</button>
+        <button onclick="removePerson()"> Прыгать на машину</button> 
+        <button onclick="alert('Нуржас не таксист а IT-шник!')">Нуржас таксист?</button>
+    </div>
+
+    <script>
+        function stopAnimation() {
+            var car = document.querySelector('.car');
+            car.style.animationPlayState = 'paused';
+        }
+
+        function resumeAnimation() {
+            var car = document.querySelector('.car');
+            car.style.animationPlayState = 'running';
+        }
+
+        function removePerson() {
+            var person = document.querySelector('.person');
+            person.remove();
+        }
+    </script>
+</body>
+</html>
